@@ -1,5 +1,13 @@
+import { Link } from "react-router-dom";
+
 function Header(props) {
-    return <h1>Header</h1>;
-  }
-  
-  export default Header;
+  return (
+    <nav className="nav">
+      <Link to="/">
+        <div>Record App</div>
+      </Link>
+    </nav>
+  );
+}
+
+export default Header;
