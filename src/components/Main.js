@@ -33,6 +33,31 @@ function Main(props) {
     }
   };
 
+  const deleteRecords = async (id) => {
+    try{
+      await fetch(`${API_URL}/${id}`, {
+        method: 'DELETE'
+      });
+    } catch (error) {
+      getRecords();
+    };
+  };
+
+  const updateRecords = async (id, updatedRecord) => {
+    try{
+      await fetch(`${API_URL}/${id}`, {
+        method: 'PUT', 
+        headers: {
+          "Content-Type": "Application/json",
+        },
+        body: JSON.stringify(updatedRecord),
+      });
+      getRecords();
+    } catch (error) {
+      
+    };
+  };
+
   useEffect(() => {
     getRecords();
   }, []);
@@ -40,8 +65,20 @@ function Main(props) {
   return (
     <main>
       <Routes>
-        <Route path="/" element={<Index records={records} createRecords={createRecords}/>} />
-        <Route path="/records/:id" element={<Show />} />
+        <Route path="/" 
+        element={<Index 
+        records={records} 
+        createRecords={createRecords}
+        />} 
+        />
+        <Route path="/records/:id" 
+        element={<Show 
+        records={records}
+        updateRecords={updateRecords} 
+        deleteRecords={deleteRecords}
+        />
+        } 
+        />
       </Routes>
     </main>
   );

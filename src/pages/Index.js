@@ -1,17 +1,17 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 
-function Index(props) {
+function Index({ records, createRecords }) {
   const [ newForm, setNewForm ] = useState({
     albumTitle: "",
     bandName: "",
     image: "",
     vinylSize: "",
     description: ""
-  });
+  })
 
   const loaded = () => {
-    return props.records.map(({ bandName, albumTitle, image, _id }) => {
+    return records.map(({ bandName, albumTitle, image, _id }) => {
       return (
         <div className="record" key={_id}>
           <Link to={`/records/${_id}`}>
@@ -38,7 +38,7 @@ const handleChange = event => {
 const handleSubmit = event => {
   event.preventDefault();
   //if(Object.values(newForm).length === 0) return; //if there are no values inside the newForm state object, terminate function execution
-  props.createRecords(newForm)
+  createRecords(newForm)
 };
 
 return (
@@ -81,7 +81,7 @@ return (
       />
       <input type="submit" value="Add Record" />
     </form>
-    {props.records ? loaded() : loading()}
+    {records ? loaded() : loading()}
   </section>
   )
 }
