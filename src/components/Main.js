@@ -5,7 +5,8 @@ import Show from "../pages/Show";
 
 function Main(props) {
   const [ records, setRecords ] = useState(null);
-  const API_URL = "http://localhost:4000/api/records";
+  //const API_URL = "http://localhost:4000/api/records";
+  const API_URL = "https://record-api-project3.herokuapp.com/";
 
   const getRecords = async () => {
     try{
