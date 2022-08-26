@@ -1,70 +1,144 @@
-# Getting Started with Create React App
+<div id="top"></div>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<details>
+  <summary>Table of Contents</summary>
+  <ol>
+    <li>
+      <a href="#about-the-project">About The Project</a>
+      <ul>
+        <li><a href="#technical-requirements">Technical Requirements</a></li>
+        <li><a href="#technologies-used">Technologies-Used</a></li>
+      </ul>
+    </li>
+    <li>
+      <a href="#user-stories">User Stories</a>
+      <ul>
+        <li><a href="#mvp">MVP</a></li>
+        <li><a href="#stretch-goals">Stretch Goals</a></li>
+      </ul>
+    </li>
+    <li>
+      <a href="#developement">Planning, Unsolved Problems, and Future Enhancements</a>
+      <ul>
+        <li><a href="#tools-used">Tools Used</a></li>
+        <li><a href="#initial-wireframes">Initial Wireframes</a></li>
+        <li><a href="#unsolved-problems">Unsolved Problems</a></li>
+        <li><a href="#future-enhancements">Future Enhancements</a></li>
+      </ul>
+    </li>
+    <li>
+     <a href="#getting-started">Getting Started</a>
+    </li>
+  </ol>
+</details>
 
-## Available Scripts
+<div align="center">
+<h1 align="center">Record Catalog</h1>
 
-In the project directory, you can run:
+  <p align="center">
+This application will allow the user to catalog their music records in an organized online database. There will be flexibility to create, edit, or delete, making this application unique to each user.
+    <br />
+    <a href="#"><strong>Explore the docs »</strong></a>
+    <br />
+    <br />
+    <a href="#">View Live Site</a>
+    ·
+    <a href="https://github.com/hummingbirdcreative/Project3-RecordCatalog-Backend/issues">Report Bug</a>
+    ·
+    <a href="https://github.com/hummingbirdcreative/Project3-RecordCatalog-Backend/issues">Request Feature</a>
+  </p>
+</div>
 
-### `npm start`
+## About The Project
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+My first MERN application using Node.js, MongoDb, Mongoose, Express and React.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Here are a few of the views as a login-in user.
+![UserProfile](#)
+![RecordIndex](#)
 
-### `npm test`
+## Do you want to see what a live, exsisting user collection looks like? 
+<b>For testing purposes, you can use the login with:</b> <br>
+-- email: test@email.com <br>
+-- password: testtest
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+<em>*You can add/edit anything you wish. However, please only delete an item if you added it. Thank you!</em>
 
-### `npm run build`
+## Technical Requirements
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- A working full-stack, single -page application hosted on Heroku & Netlify.
+- Incorporate the technologies of the MERN-stack using Node.js, Mongoose, Express and React.
+- Have a well-styled front-end that communicates with Express backend via AJAX.
+- Include at least two of the four CRUD data operations/actions.
+- Be deployed online and accessible to the public via Heroku
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Technologies used
+#### Frontend
+- [React](https://reactjs.org/)
+#### Backend
+- [Node.js](https://nodejs.org/dist./v6.16.0/docs/api/synopsis.html)
+- [Express](https://expressjs.com/)
+- [Mongoose](https://mongoosejs.com/docs/index.html)
+- [MongoDB Atlas](https://www.mongodb.com/atlas)
+#### Deployment
+- [Heroku](https://devcenter.heroku.com/articles/getting-started-with-nodejs)
+- [Netlify](https://docs.netlify.com/?_gl=1%2a3nt3we%2a_gcl_aw%2aR0NMLjE2NjEzOTM2NTIuQ2p3S0NBandtSmVZQmhBd0Vpd0FYbGcwQVNXeHdhaDY3cXZTVFBxOHBTcTdEeUdmWWhDUmRjdmxnX0V4MkFseGcwd3VCM3ltcHNUc3V4b0NqRmNRQXZEX0J3RQ..&_ga=2.106224459.93517023.1661393652-710746354.1661393652&_gac=1.112985462.1661393652.CjwKCAjwmJeYBhAwEiwAXlg0ASWxwah67qvSTPq8pSq7DyGfYhCRdcvlg_Ex2Alxg0wuB3ympsTsuxoCjFcQAvD_BwE)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+<p align="right">(<a href="#top">back to top</a>)</p>
 
-### `npm run eject`
+## User stories
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### MVP
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- As a user I should be able to add entry for their record collection by listing out the image, band name, album title, vinyl size,and description.
+- As a user, I want to be able to edit/update album photos, album title, band names, and descriptions
+- As a user, I want to be able to delete records that are no longer wanted in the database
+- As a user, I want to be able to see all albums of all users on a shared index page
+- As a user, I want a well-designed, clean interface that is easy to understand and navigate
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### Stretch Goals
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+- User Login
+- Favorites option
+- Search option
+<p align="right">(<a href="#top">back to top</a>)</p>
 
-## Learn More
+## Development
+### Planning, Unsolved Problems, and Future Enhancements 
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+#### Tools used
+- [Invision](https://www.invisionapp.com/)
+- [Trello](https://trello.com/)
 
-To learn React, check out the [React documentation](https://reactjs.org/).
 
-### Code Splitting
+### Initial Wireframes
+![HomePage](https://i.imgur.com/fpoWU04.png)
+![UserRecords](https://i.imgur.com/yMRyUuK.png)
+![ShowEditCreateDelete](https://i.imgur.com/rH7Z1xq.png)
+![ERD](https://i.imgur.com/t3rYHKx.png)
+<p align="right">(<a href="#top">back to top</a>)</p>
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## Unsolved Problems
 
-### Analyzing the Bundle Size
+- list unsolved problems here
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+<p align="right">(<a href="#top">back to top</a>)</p>
 
-### Making a Progressive Web App
+## Future Enhancements
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+- Add a wishlist option for users
+- utilize an api for the user to search a database for new games
+- allow users to add friends
 
-### Advanced Configuration
+<p align="right">(<a href="#top">back to top</a>)</p>
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+## Getting Started
+- Fork/Clone this repository
+- npm install react-router-dom
+- npm start to start the server
 
-### Deployment
+<p align="right">(<a href="#top">back to top</a>)</p>
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+*If you have a suggestion that would make this better, please fork the repo and create a pull request. You can also simply open an issue with the tag "enhancement". Don't forget to give the project a star! Thanks again!*
 
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+<p align="right">(<a href="#top">back to top</a>)</p>
