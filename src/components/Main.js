@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { Routes, Route } from "react-router-dom";
+import { Container, Typography } from '@mui/material';
 import Index from "../pages/Index";
 import Show from "../pages/Show";
 
@@ -65,6 +66,16 @@ function Main(props) {
 
   return (
     <main>
+      <div className="intro-container">
+        <Container maxWidth="sm">
+          <Typography variant="h2" align="center" color="textPrimary" gutterBottom>
+            Record Crate
+          </Typography>
+          <Typography variant="h5" align="center" color="textSecondary" paragraph>
+            Really organize your music record collection and get your records into a virtual milk crate with options to add, update, and delete your albums.
+          </Typography>
+        </Container>
+      </div>
       <Routes>
         <Route path="/" 
         element={<Index 
