@@ -1,7 +1,11 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import { CssBaseline, Container, Grid, Card, CardMedia, CardContent, Typography, CardActions, Button } from "@mui/material";
+import { createTheme, ThemeProvider } from "@mui/material/styles";
 
 function Index({ records, createRecords }) {
+  const theme = createTheme();
+
   const [ newForm, setNewForm ] = useState({
     albumTitle: "",
     bandName: "",
@@ -13,16 +17,46 @@ function Index({ records, createRecords }) {
   const loaded = () => {
     return records.map(({ bandName, albumTitle, image, _id }) => {
       return (
-        <div className="record" key={_id}>
-          <Link to={`/records/${_id}`}>
-          <h1>{albumTitle}</h1>
-          </Link>
-          <img src={image} alt={albumTitle} />
-          <h3>{bandName}</h3>
-        </div>
+        <>
+        <ThemeProvider theme={theme}>
+        <CssBaseline />
+        <Container sx={{ py: 6 }} maxWidth="md">
+          <Grid container spacing={4} justifyItems="center">
+              <Grid item key={_id} xs={12} sm={6} md={4}>
+                <Card
+                  sx={{ height: '100%', display: 'flex', flexDirection: 'column' }}
+                >
+                  <CardMedia
+                    component="img"
+                    sx={{
+                      // 16:9
+                      pt: '10%',
+                    }}
+                    image={image}
+                    alt={albumTitle}
+                  />
+                  <CardContent sx={{ flexGrow: 1 }}>
+                    <Typography gutterBottom variant="h5" component="h2">
+                    <Link to={`/records/${_id}`}>{bandName}</Link>
+                    </Typography>
+                    <Typography>
+                      {albumTitle}
+                    </Typography>
+                  </CardContent>
+                  <CardActions>
+                    <Button size="small">View</Button>
+                    <Button size="small">Edit</Button>
+                  </CardActions>
+                </Card>
+              </Grid>
+          </Grid>
+        </Container>
+        </ThemeProvider>
+        </>
       )
     })
   };
+
 
   const loading = () => {
     return <h1>Loading...</h1>

@@ -1,10 +1,13 @@
 import { useEffect, useState } from "react";
 import { Routes, Route } from "react-router-dom";
-import { Container, Typography } from '@mui/material';
+import { CssBaseline, Box, Container, Typography, Stack, Button } from '@mui/material';
+import { createTheme, ThemeProvider } from '@mui/material/styles';
 import Index from "../pages/Index";
 import Show from "../pages/Show";
 
 function Main(props) {
+  const theme = createTheme();
+
   const [ records, setRecords ] = useState(null);
   //const API_URL = "http://localhost:4000/api/records";
   const API_URL = "https://record-api-project3.herokuapp.com/api/records";
@@ -65,17 +68,45 @@ function Main(props) {
   }, []);
 
   return (
+    <ThemeProvider theme={theme}>
+    <CssBaseline />
     <main>
-      <div className="intro-container">
+      <Box
+        sx={{
+          bgcolor: 'background.paper',
+          pt: 8,
+          pb: 6,
+        }}
+      >
+      
         <Container maxWidth="sm">
-          <Typography variant="h2" align="center" color="textPrimary" gutterBottom>
+        <div className="intro-Container">
+          <Typography 
+              component="h1"
+              variant="h2"
+              align="center"
+              color="text.primary"
+              gutterBottom
+          >
             Record Crate
           </Typography>
-          <Typography variant="h5" align="center" color="textSecondary" paragraph>
+          <Typography variant="h5" align="center" color="text.secondary" paragraph>
             Really organize your music record collection and get your records into a virtual milk crate with options to add, update, and delete your albums.
           </Typography>
-        </Container>
       </div>
+      <Stack
+              sx={{ pt: 4 }}
+              direction="row"
+              spacing={2}
+              justifyContent="center"
+            >
+              <Button variant="contained">Main call to action</Button>
+              <Button variant="outlined">Secondary action</Button>
+            </Stack>
+          </Container>
+        </Box>
+     
+  
       <Routes>
         <Route path="/" 
         element={<Index 
@@ -93,6 +124,7 @@ function Main(props) {
         />
       </Routes>
     </main>
+    </ThemeProvider>
   );
 }
 
