@@ -9,7 +9,8 @@ function App() {
   const [ userState, setUserState ] = useState(null);
 
   useEffect(() => {
-    onAuthStateChanged(auth, user => setUserState(user));
+    const unsubscribe = onAuthStateChanged(auth, user => setUserState(user));
+    return unsubscribe;
   }, []);
 
   return (
