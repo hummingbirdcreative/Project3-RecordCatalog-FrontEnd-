@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { login, logout } from '../firebase';
 import { Typography, AppBar, Toolbar, CssBaseline } from '@mui/material';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import AlbumIcon from '@mui/icons-material/Album';
@@ -20,6 +21,10 @@ function Header(props) {
         </Toolbar>
       </AppBar>
       </ThemeProvider>
+    <div className="auth-links">
+      <div onClick={logout}>Log Out</div>
+      <div onClick={login}>Login</div>
+    </div>
     </>
   );
 }
