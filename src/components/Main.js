@@ -23,7 +23,14 @@ function Main({ user }) {
 
   const getRecords = async () => {
     try{
-      const response = await fetch(API_URL);
+      const token = await user.getIdToken();
+      //console.log(token);
+      const response = await fetch(API_URL, {
+        method: 'GET',
+        header: {
+          'Authorization': 'Bearer' + token
+        }
+      });
       const data = await response.json();
       setRecords(data);
     } catch (error) {
