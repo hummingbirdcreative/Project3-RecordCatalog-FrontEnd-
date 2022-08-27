@@ -1,10 +1,18 @@
 import { useEffect, useState } from "react";
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, Navigate } from "react-router-dom";
 import { CssBaseline, Box, Container, Typography, Stack, Button } from '@mui/material';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import Index from "../pages/Index";
 import Show from "../pages/Show";
 import Home from "../pages/Home";
+
+const PrivateRoute = ({ children , user }) => {
+  if(user) {
+    return children;
+  } else {
+    return <Navigate to="/" />
+  }
+}
 
 function Main({ user }) {
   const theme = createTheme();
@@ -115,17 +123,24 @@ function Main({ user }) {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/records" 
-        element={<Index 
-        records={records} 
-        createRecords={createRecords}
-        />} 
+        element={
+        <PrivateRoute user={user}>
+          <Index 
+            records={records} 
+            createRecords={createRecords}
+        />
+        </PrivateRoute>
+        } 
         />
         <Route path="/records/:id" 
-        element={<Show 
+        element={
+        <PrivateRoute user={user}>
+          <Show 
         records={records}
         updateRecords={updateRecords} 
         deleteRecords={deleteRecords}
         />
+        </PrivateRoute>
         } 
         />
       </Routes>
