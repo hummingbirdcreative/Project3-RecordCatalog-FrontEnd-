@@ -15,8 +15,8 @@ function App() {
 
   return (
     <div className="App">
-      <Header />
-      <Main />
+      <Header user={userState}/>
+      <Main user={userState}/>
       <Footer />
     </div>
   )

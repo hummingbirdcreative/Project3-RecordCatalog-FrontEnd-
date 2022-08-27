@@ -22,8 +22,12 @@ function Header(props) {
       </AppBar>
       </ThemeProvider>
     <div className="auth-links">
+      {
+        user ?
       <div onClick={logout}>Log Out</div>
+      :
       <div onClick={login}>Login</div>
+      }
     </div>
     </>
   );
