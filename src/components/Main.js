@@ -5,7 +5,7 @@ import { createTheme, ThemeProvider } from '@mui/material/styles';
 import Index from "../pages/Index";
 import Show from "../pages/Show";
 
-function Main(props) {
+function Main({ user }) {
   const theme = createTheme();
 
   const [ records, setRecords ] = useState(null);
@@ -64,8 +64,12 @@ function Main(props) {
   };
 
   useEffect(() => {
-    getRecords();
-  }, []);
+    if(user) {
+      getRecords();
+    } else {
+      setRecords(null);
+    }
+    }, [ user ]);
 
   return (
     <ThemeProvider theme={theme}>

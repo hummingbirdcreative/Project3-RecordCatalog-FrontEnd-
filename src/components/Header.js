@@ -4,7 +4,7 @@ import { Typography, AppBar, Toolbar, CssBaseline } from '@mui/material';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import AlbumIcon from '@mui/icons-material/Album';
 
-function Header(props) {
+function Header({ user }) {
   const theme = createTheme();
   return (
     <>
@@ -23,8 +23,10 @@ function Header(props) {
       </ThemeProvider>
     <div className="auth-links">
       {
-        user ?
+        user ? <>
+      <div>Welcome, {user.displayName}</div> 
       <div onClick={logout}>Log Out</div>
+      </>
       :
       <div onClick={login}>Login</div>
       }
