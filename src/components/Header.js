@@ -26,14 +26,14 @@ function Header({ user }) {
         user ? <>
       <div>Welcome, {user.displayName}</div> 
       <div onClick={logout}>Log Out</div>
-      </>
-      :
-      <div onClick={login}>Login</div>
-      }
       <Link to="/records">
       <div>
         Records</div>
       </Link>
+      </>
+      :
+      <div onClick={login}>Login</div>
+      }
     </div>
     </>
   );
