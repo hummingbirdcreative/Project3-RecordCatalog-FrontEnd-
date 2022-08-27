@@ -4,6 +4,7 @@ import { CssBaseline, Box, Container, Typography, Stack, Button } from '@mui/mat
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import Index from "../pages/Index";
 import Show from "../pages/Show";
+import Home from "../pages/Home";
 
 function Main({ user }) {
   const theme = createTheme();
@@ -112,7 +113,8 @@ function Main({ user }) {
      
   
       <Routes>
-        <Route path="/" 
+        <Route path="/" element={<Home />} />
+        <Route path="/records" 
         element={<Index 
         records={records} 
         createRecords={createRecords}

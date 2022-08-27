@@ -30,6 +30,10 @@ function Header({ user }) {
       :
       <div onClick={login}>Login</div>
       }
+      <Link to="/records">
+      <div>
+        Records</div>
+      </Link>
     </div>
     </>
   );
