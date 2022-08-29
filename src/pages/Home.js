@@ -1,12 +1,11 @@
-import { Helmet } from 'react-helmet';
+import Head from '../components/Head';
 
 function Home() {
     return (
       <>
-        <Helmet>
-          <title>Home | Record App</title>
-        </Helmet>
+        <Head title="Home" />
         <h1>Home</h1>
+        
       </>
     ) 
   };

@@ -1,3 +1,4 @@
+import Head from "../components/Head";
 import { useParams, useNavigate } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 
@@ -37,6 +38,8 @@ function Show({ records, deleteRecords, updateRecords }) {
   }, [records, record]);
 
     return (
+      <>
+        <Head title="Record Details" />
       <div className='record'>
         <h1>{record.bandName}</h1>
         <h2>{record.albumTitle}</h2>
@@ -85,6 +88,7 @@ function Show({ records, deleteRecords, updateRecords }) {
         <input type="submit" value="Update Record" />
         </form>
       </div>
+      </>
     );
   };
   

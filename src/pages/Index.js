@@ -1,3 +1,4 @@
+import Head from '../components/Head';
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { CssBaseline, Container, Grid, Card, CardMedia, CardContent, Typography, CardActions, Button } from "@mui/material";
@@ -76,6 +77,8 @@ const handleSubmit = event => {
 };
 
 return (
+  <>
+    <Head title="Records List" />
   <section>
     <form onSubmit={handleSubmit}>
       <input 
@@ -117,6 +120,7 @@ return (
     </form>
     {records ? loaded() : loading()}
   </section>
+  </>
   )
 }
 
