@@ -105,42 +105,6 @@ function Main({ user }) {
     <ThemeProvider theme={theme}>
     <CssBaseline />
     <main>
-      <Box
-        sx={{
-          bgcolor: 'background.paper',
-          pt: 8,
-          pb: 6,
-        }}
-      >
-      
-        <Container maxWidth="sm">
-        <div className="intro-Container">
-          <Typography 
-              component="h1"
-              variant="h2"
-              align="center"
-              color="text.primary"
-              gutterBottom
-          >
-            Record Crate
-          </Typography>
-          <Typography variant="h5" align="center" color="text.secondary" paragraph>
-            Really organize your music record collection and get your records into a virtual milk crate with options to add, update, and delete your albums.
-          </Typography>
-      </div>
-      <Stack
-              sx={{ pt: 4 }}
-              direction="row"
-              spacing={2}
-              justifyContent="center"
-            >
-              <Button variant="contained">Main call to action</Button>
-              <Button variant="outlined">Secondary action</Button>
-            </Stack>
-          </Container>
-        </Box>
-     
-  
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/records" 
