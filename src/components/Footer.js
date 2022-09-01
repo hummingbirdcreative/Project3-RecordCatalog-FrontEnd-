@@ -1,28 +1,38 @@
-import { CssBaseline, Box, Typography } from '@mui/material';
-import { createTheme, ThemeProvider } from '@mui/material/styles';
+import styled from 'styled-components';
 
+const StyledFooter = styled.footer`
+    float:left;
+	  width:100%;
+	  height:70px;
+	  background-color:#2E2D30;
+
+    div {
+    float:left;
+	  text-align:left;
+	  font-family: 'Roboto', sans-serif;
+    font-size: 15px;
+	  height:70px;
+	  line-height:70px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+	  color:#666;
+	  margin-left:15px;
+	  font-weight:500;
+    }
+
+    @media (min-width: 768px) {
+      justify-content: space-between;
+      padding: 0 1rem;
+    }
+    `;
 function Footer(props) {
-    const theme = createTheme();
     return (
       <>
-    {/* Footer */}
-    <ThemeProvider theme={theme}>
-      <CssBaseline />
-      <Box sx={{ bgcolor: 'background.paper', p: 6 }} component="footer">
-        <Typography variant="h6" align="center" gutterBottom>
-          Record Crate Catalog
-        </Typography>
-        <Typography
-          variant="subtitle1"
-          align="center"
-          color="text.secondary"
-          component="p"
-        >
-          Copyright &copy; All Rights Reserved. 2022 Record Crate Catalog.
-        </Typography>
-      </Box>
-      {/* End footer */}
-    </ThemeProvider>
+      <StyledFooter>
+      <div>
+        Copyright &copy; All Rights Reserved. 2022 Record Crate Catalog.
+     </div>
+     </StyledFooter>
     </>
 );
 }

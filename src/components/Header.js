@@ -6,16 +6,19 @@ const StyledHeader = styled.header`
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: black;
-    height: 3rem;
+    background-color: #2e2d30;
+    height: 65px;
     color: white;
     a {
       text-decoration: none;
       color: inherit;
+      font-family: 'Pacifico', cursize;
     }
     div:first-of-type {
       display: flex;
       align-items: center;
+      font-family: 'Roboto', sans-serif;
+
       div {
         margin-left: 1rem;
       }
@@ -31,7 +34,7 @@ function Header({ user }) {
   return (
     <>
       <StyledHeader>
-          <Link to="/">
+          <Link to="/Records">
               Record Crate
           </Link>
         
@@ -39,10 +42,7 @@ function Header({ user }) {
       {
         user ? <>
       <div>Welcome, {user.displayName}</div> 
-      <div onClick={logout}>Log Out</div>
-      <Link to="/records">
-      <div>Records</div>
-      </Link>
+      <div onClick={logout}>Logout</div>
       </>
       :
       <div onClick={login}>Login</div>

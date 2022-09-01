@@ -1,7 +1,5 @@
 import { useEffect, useState, useRef } from "react";
 import { Routes, Route, Navigate } from "react-router-dom";
-import { CssBaseline, Box, Container, Typography, Stack, Button } from '@mui/material';
-import { createTheme, ThemeProvider } from '@mui/material/styles';
 import Index from "../pages/Index";
 import Show from "../pages/Show";
 import Home from "../pages/Home";
@@ -15,7 +13,6 @@ const PrivateRoute = ({ children , user }) => {
 }
 
 function Main({ user }) {
-  const theme = createTheme();
 
   const getRecordsRef = useRef(null);
 
@@ -102,8 +99,6 @@ function Main({ user }) {
     }, [ user ]);
 
   return (
-    <ThemeProvider theme={theme}>
-    <CssBaseline />
     <main>
       <Routes>
         <Route path="/" element={<Home />} />
@@ -130,7 +125,6 @@ function Main({ user }) {
         />
       </Routes>
     </main>
-    </ThemeProvider>
   );
 }
 

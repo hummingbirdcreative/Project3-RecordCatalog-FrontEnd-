@@ -1,4 +1,5 @@
 import "./App.css";
+import { useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { auth, onAuthStateChanged } from "./firebase";
 import Header from "./components/Header";
@@ -8,8 +9,17 @@ import Footer from "./components/Footer"
 function App() {
   const [ userState, setUserState ] = useState(null);
 
+  const navigate = useNavigate();
+
   useEffect(() => {
-    const unsubscribe = onAuthStateChanged(auth, user => setUserState(user));
+    const unsubscribe = onAuthStateChanged(auth, user => {
+      if (user) {
+        navigate("/records");
+      } else {
+        navigate("/")
+      }
+      setUserState(user)
+    });
     return unsubscribe;
   }, []);
 

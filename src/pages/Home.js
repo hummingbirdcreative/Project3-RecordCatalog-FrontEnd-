@@ -1,11 +1,16 @@
 import Head from '../components/Head';
 
+import StyledHeroHeader from '../components/Hero';
+
+
+
 function Home() {
     return (
       <>
-        <Head title="Home" />
-        <h1>Home</h1>
-        
+    
+      <Head title="Home" />
+      
+      <StyledHeroHeader />
       </>
     ) 
   };
