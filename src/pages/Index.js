@@ -41,7 +41,7 @@ const StyledCard = styled.section`
 
 .album-image {
     height: 250px;
-    width: 250px;
+    width: -webkit-fill-available;
 	margin: 5%;
 }
 
