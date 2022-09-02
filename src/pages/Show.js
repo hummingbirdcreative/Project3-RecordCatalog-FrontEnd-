@@ -72,7 +72,7 @@ function Show({ records, deleteRecords, updateRecords }) {
     deleteRecords(id);
     //navigate the user back to the index page
     //programmatic navigation
-    navigate('/')
+    navigate('/records')
   }
 
   const goBack = () => {
