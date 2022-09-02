@@ -92,7 +92,8 @@ function Main({ user }) {
 
   useEffect(() => {
     if(user) {
-      getRecordsRef.current();
+     getRecordsRef.current()
+     //getRecords();
     } else {
       setRecords(null);
     }
@@ -115,7 +116,7 @@ function Main({ user }) {
         <Route path="/records/:id" 
         element={
         <PrivateRoute user={user}>
-          <Show 
+          <Show user={user}
         records={records}
         updateRecords={updateRecords} 
         deleteRecords={deleteRecords}

@@ -1,10 +1,12 @@
-import { Helmet } from 'react-helmet';
+import { Helmet, HelmetProvider } from 'react-helmet-async';
 
 const Head = (props) => {
     return (
+      <HelmetProvider>
         <Helmet>
           <title> {props.title}  | Record Crate</title>
         </Helmet>
+        </HelmetProvider>
     )
 }
 

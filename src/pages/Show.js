@@ -39,14 +39,13 @@ const StyledShowRecord = styled.section`
 
   .description {
     font-family: 'Roboto', sans-serif;
-    margin: 0px;
+    margin: 0px 0px 10px 0px;
   }
 
   .vinylSize {
     font-family: 'Roboto', sans-serif;
-    margin: 0px 0px 10px 0px;
+    margin: 0px;
   }
-  
 `;
 
 const StyledButton = styled.section`
@@ -75,6 +74,10 @@ function Show({ records, deleteRecords, updateRecords }) {
     //programmatic navigation
     navigate('/')
   }
+
+  const goBack = () => {
+    navigate(`/records`)
+  }
   const handleChange = event => {
     setUpdateForm((prevState) => ({
       ...prevState, 
@@ -88,6 +91,7 @@ function Show({ records, deleteRecords, updateRecords }) {
   };
 
   useEffect(() => {
+    
     setUpdateForm(records)
   }, [records, record]);
 
@@ -106,8 +110,9 @@ function Show({ records, deleteRecords, updateRecords }) {
         <div className="showRecordInfo">
         <h1 className="bandName">{record.bandName}</h1>
         <h2 className="albumTitle">{record.albumTitle}</h2>
-        <h6 className="description">{record.description}</h6>
-        <h5 className="vinylSize">{record.vinylSize}</h5>
+        <h6 className="vinylSize">{record.vinylSize}</h6>
+        <h5 className="description">{record.description}</h5>
+        
         
         </div>
         </div>
@@ -116,42 +121,43 @@ function Show({ records, deleteRecords, updateRecords }) {
         <StyledButton>
         <div className="showPageButtons">
         <button onClick={handleDelete}>Delete This Record</button>
-        <button onClick="/records">Go Back</button>
+        <button onClick={goBack}>Go Back</button>
         </div>
         </StyledButton>
+
         <StyledUpdateForm>
         <form className="updateFormForm" onSubmit={handleUpdate}>
         <input
           type="text"
-          value={updateForm.bandName}
+          defaultValue={updateForm.bandName}
           name="bandName"
           placeholder="band name"
           onChange={handleChange}
         />
         <input
           type="text"
-          value={updateForm.albumTitle}
+          defaultValue={updateForm.albumTitle}
           name="albumTitle"
           placeholder="album title"
           onChange={handleChange}
         />  
         <input
           type="text"
-          value={updateForm.image}
+          defaultValue={updateForm.image}
           name="image"
           placeholder="image"
           onChange={handleChange}
         /> 
         <input
           type="text"
-          value={updateForm.vinylSize}
+          defaultValue={updateForm.vinylSize}
           name="vinylSize"
           placeholder="vinyl size"
           onChange={handleChange}
         />
         <input
           type="text"
-          value={updateForm.description}
+          defaultValue={updateForm.description}
           name="description"
           placeholder="description"
           onChange={handleChange}
