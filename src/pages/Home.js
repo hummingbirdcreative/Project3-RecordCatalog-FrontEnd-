@@ -1,18 +1,15 @@
-import Head from '../components/Head';
+import Head from "../components/Head";
 
-import StyledHeroHeader from '../components/Hero';
-
-
+import StyledHeroHeader from "../components/Hero";
 
 function Home() {
-    return (
-      <>
-    
+  return (
+    <>
       <Head title="Home" />
-      
+
       <StyledHeroHeader />
-      </>
-    ) 
-  };
-  
-  export default Home;
+    </>
+  );
+}
+
+export default Home;
